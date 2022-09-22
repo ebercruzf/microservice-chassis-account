@@ -1,0 +1,56 @@
+logging:
+  pattern:
+    console: "[Chassis Account] %clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(---){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+  
+server:
+  port: 58112
+  
+spring:
+  application:
+    name: microservice-chassis-account
+  main:
+    banner-mode: OFF
+  devtools:
+    restart:
+      additional-paths:
+      - conf/**
+  kafka:
+    listener:
+      missing-topics-fatal: false
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer        
+    consumer:
+      group-id:  ms-chassis-account-async
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+        health-check-path: /actuator/health
+        instance-id: microservice-chassis-account-${random.int}
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres_user
+    password: postgres_password
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate.default_schema: ms_chassis_account
+feign:
+  client:
+    config:
+      transferClient:
+        retryer: com.olinnova.microservice.api.client.FeignRetryer
+
+app:
+  api:
+    client:
+      transfer:
+        url: http://localhost:63703
