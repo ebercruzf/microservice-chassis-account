@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "93b0904a-7b48-4269-912d-3a734a6c3429",
+		"name": "ChassisMicroservicesCliente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1304060"
+	},
+	"item": [
+		{
+			"name": "AccountAPIController Sync",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_id\" : \"112\",\n    \"accountId\":\"110\",\n    \"transferID\":\"113\",\n    \"clientID\" : \"114\",\n    \"message\" : \"message1\",\n    \"registerDate\" : \"2010-11-11\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:58112/api/account/transfer/sync/:account_id",
+					"host": [
+						"localhost"
+					],
+					"port": "58112",
+					"path": [
+						"api",
+						"account",
+						"transfer",
+						"sync",
+						":account_id"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": "111"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountAPIController Async",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_id\" : \"115\",\n    \"accountId\":\"111\",\n    \"transferID\":\"112\",\n    \"clientID\" : \"116\",\n    \"message\" : \"message1\",\n    \"registerDate\" : \"2010-11-20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:58112/api/cuenta/async/test/:account_id",
+					"host": [
+						"localhost"
+					],
+					"port": "58112",
+					"path": [
+						"api",
+						"cuenta",
+						"async",
+						"test",
+						":account_id"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": "13778"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransferAPIController Async",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:63703/api/transfer/async/:account_id",
+					"host": [
+						"localhost"
+					],
+					"port": "63703",
+					"path": [
+						"api",
+						"transfer",
+						"async",
+						":account_id"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": "13778"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransferAPIController sync Disable",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n    \"createDate\" : \"2010-11-20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:63703/api/transfer/disable/master/:account_id",
+					"host": [
+						"localhost"
+					],
+					"port": "63703",
+					"path": [
+						"api",
+						"transfer",
+						"disable",
+						"master",
+						":account_id"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": "13778"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Tranfer Async",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"createDate\" : \"2010-11-11\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:63703/api/transfer/disable/master/:account_id",
+					"host": [
+						"localhost"
+					],
+					"port": "63703",
+					"path": [
+						"api",
+						"transfer",
+						"disable",
+						"master",
+						":account_id"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": "111"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "account_id",
+			"value": "111"
+		}
+	]
+}
