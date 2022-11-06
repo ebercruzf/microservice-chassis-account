@@ -1,12 +1,12 @@
 package com.olinnova.microservice.api.request;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Setter
-@Getter
+@Data
 public class AccountTransferAccountRequest {
 
     private String reason;

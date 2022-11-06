@@ -1,5 +1,6 @@
 package com.olinnova.microservice.api.client;
 
+
 import com.olinnova.microservice.api.request.AccountTransferAccountRequest;
 import com.olinnova.microservice.api.response.AccountTransferResponse;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface IAccountTransferSyncClient {
     @DeleteMapping(value = "/api/transfer/disable/master/{account_id} ")
     public ResponseEntity<AccountTransferResponse> disableTransferSync(@PathVariable(name = "account_id") String accountId,
-                                                                @RequestBody AccountTransferAccountRequest requestBody);
+                                                                       @RequestBody AccountTransferAccountRequest requestBody);
 
 
 }

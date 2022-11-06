@@ -1,11 +1,14 @@
 package com.olinnova.microservice.broker.message;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
-@Data
+@Setter
+@Getter
 public class MasterAccountTranferResponseMessage {
 
     private LocalDate tranferDate;

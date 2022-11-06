@@ -3,7 +3,6 @@ package com.olinnova.microservice.broker.message;
 import lombok.Data;
 
 import java.time.LocalDate;
-
 @Data
 public class MasterAccountTransferMessage {
 
